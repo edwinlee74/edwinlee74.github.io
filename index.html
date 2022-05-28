@@ -2,9 +2,49 @@
 <html>
   <head>
     <title>About Project that I've done.</title> 
+    <link href="style.css" rel="stylesheet">
   </head>
   <body>
-    <h1>Project 1</h1>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/bcWARmHNnv8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <header>
+      <h2>IOT機房監控</h2>
+    </header>
+    <div class="container">
+      <div class="content_container">
+        <h1>Youtube影片: 使用NodeMCU來監控機房 </h1>
+        <div class="section_container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/bcWARmHNnv8"
+             title="YouTube video player" frameborder="0" 
+             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+             allowfullscreen>
+        </iframe>
+        </div>
+        <h1>系統架構圖</h1>
+        <div class="section_container">
+           <img src="./pic/ComputerRoomMonitor_Structure.png" width="800">
+        </div>
+        <h3>架構說明:</h3>
+        <ol>
+          <li>系統後端使用influxDB,利用它來收集從IOT裝置來的溫溼度值。</li>
+          <li>設備使用SNMP來傳送事件。</li>
+          <li>IOT裝置將收集的數據透過SOCKETIO, 並利用ESP8266本身的WiFi無線模組, 將資料傳送回後端。</li>
+        </ol>
+        <h1>IOT接線圖</h1>
+        <div class="section_container">
+           <img src="./pic/CRS接線圖.png" width="800">
+        </div>
+        <h3>IOT元件:</h3>
+        <ol>
+          <li>NodeMCU V2</li>
+          <li>DHT11 溫溼度感測器</li>
+          <li>200歐姆電阻</li>
+          <li>5mm LED</li>
+          <li>(DC 5V) 2 Channel Relay Module</li>
+          <li>(DC 12V) 風扇</li>
+        </ol>
+      </div>
+  </div>
+  <footer>
+    <h2>Edwin's work shop</h2>
+  </footer>   
   </body>
 </html>
